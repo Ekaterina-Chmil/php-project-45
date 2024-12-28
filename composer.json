@@ -1,0 +1,20 @@
+{
+    "name": "hexlet/code",
+    "description": "A simple PHP project for brain-games exercises.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ekaterina Chmil"
+        }
+    ],
+    "license": "MIT",
+    "require": {},
+    "bin": [
+      "bin/brain-games"
+    ]
+}
