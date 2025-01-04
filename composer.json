@@ -4,7 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Hexlet\\Code\\": "src/"
+            "BrainGames\\": "src/"
         }
     },
     "authors": [
@@ -13,7 +13,9 @@
         }
     ],
     "license": "MIT",
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.1"
+    },
     "bin": [
       "bin/brain-games"
     ]
