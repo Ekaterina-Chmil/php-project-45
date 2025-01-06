@@ -7,6 +7,9 @@
             "BrainGames\\": "src/"
         }
     },
+    "scripts": {
+        "brain-even": "php bin/brain-even"
+    },
     "authors": [
         {
             "name": "Ekaterina Chmil"
@@ -20,6 +23,7 @@
         "squizlabs/php_codesniffer": "^3.6"
     },
     "bin": [
-      "bin/brain-games"
+      "bin/brain-games",
+      "bin/brain-even"
     ]
 }
