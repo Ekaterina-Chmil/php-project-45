@@ -1,0 +1,51 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use BrainGames\Engine;
+
+const DESCRIPTION = 'What number is missing in the progression?';
+const ROUNDS_COUNT = 3;
+const MIN_START = 1;
+const MAX_START = 20;
+const MIN_STEP = 1;
+const MAX_STEP = 10;
+const MIN_LENGTH = 5;
+const MAX_LENGTH = 10;
+
+function generateProgression(int $start, int $step, int $length): array
+{
+    $progression = [];
+    for ($i = 0; $i < $length; $i++) {
+        $progression[] = $start + $i * $step;
+    }
+    return $progression;
+}
+
+function getGameData(): array
+{
+    $start = rand(MIN_START, MAX_START);
+    $step = rand(MIN_STEP, MAX_STEP);
+    $length = rand(MIN_LENGTH, MAX_LENGTH);
+
+    $progression = generateProgression($start, $step, $length);
+    $hiddenIndex = rand(0, $length - 1);
+    $answer = $progression[$hiddenIndex];
+    $progression[$hiddenIndex] = '..';
+
+    $question = implode(' ', $progression);
+
+    return [
+        'question' => $question,
+        'answer' => $answer,
+    ];
+}
+
+$questions = [];
+for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+    $questions[] = getGameData();
+}
+
+Engine::playGame($questions, DESCRIPTION);
+

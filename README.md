@@ -9,4 +9,6 @@ View the recording at:
 
     https://asciinema.org/a/69YzvU3eV4ryLRyogn3Pv6406
 
+    https://asciinema.org/a/VgvGWtspUpxuqSHdrG7VtLQrg
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/6c2f244d1a4968754020/maintainability)](https://codeclimate.com/github/Ekaterina-Chmil/php-project-45/maintainability)	
