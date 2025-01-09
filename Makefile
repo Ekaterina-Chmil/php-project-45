@@ -7,8 +7,8 @@ brain-games:
 brain-even:
 	./bin/brain-even
 
-brain-calc.php:
-	./bin/brain-calc.php
+brain-calc:
+	./bin/brain-calc
 
 brain-gcd:
 	./bin/brain-gcd

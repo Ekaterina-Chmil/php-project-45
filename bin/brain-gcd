@@ -5,6 +5,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use BrainGames\Engine;
 
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+
 const ROUNDS_COUNT = 3;
 
 function getGreatestCommonDivisor(int $a, int $b): int
@@ -31,5 +33,5 @@ for ($i = 0; $i < ROUNDS_COUNT; $i++) {
     $questions[] = getGameData();
 }
 
-Engine::playGame($questions);
+Engine::playGame($questions, DESCRIPTION);
 
