@@ -25,6 +25,7 @@
     "bin": [
       "bin/brain-games",
       "bin/brain-even",
-      "bin/brain-calc.php"
+      "bin/brain-calc.php",
+      "bin/brain-gcd"
     ]
 }

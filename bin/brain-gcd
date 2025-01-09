@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use BrainGames\Engine;
+
+const ROUNDS_COUNT = 3;
+
+function getGreatestCommonDivisor(int $a, int $b): int
+{
+    return $b === 0 ? $a : getGreatestCommonDivisor($b, $a % $b);
+}
+
+function getGameData(): array
+{
+    $num1 = rand(1, 100);
+    $num2 = rand(1, 100);
+
+    $question = "{$num1} {$num2}";
+    $answer = getGreatestCommonDivisor($num1, $num2);
+
+    return [
+        'question' => $question,
+        'answer' => $answer,
+    ];
+}
+
+$questions = [];
+for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+    $questions[] = getGameData();
+}
+
+Engine::playGame($questions);
+
