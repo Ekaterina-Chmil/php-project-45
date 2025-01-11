@@ -20,7 +20,7 @@ class Engine
         foreach ($questions as $question) {
             line("Question: {$question['question']}");
             $userAnswer = prompt('Your answer:');
-            if ((int)$userAnswer === $question['answer']) {
+            if (strtolower($userAnswer) === $question['answer']) {
                 line('Correct!');
             } else {
                 line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$question['answer']}'.");

@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use BrainGames\Engine;
+
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const ROUNDS_COUNT = 3;
+
+function isPrime(int $number): bool
+{
+    if ($number <= 1) {
+        return false;
+    }
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function getGameData(): array
+{
+    $questions = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+        $number = rand(1, 100);
+        $correctAnswer = isPrime($number) ? 'yes' : 'no';
+        $questions[] = [
+            'question' => (string)$number,
+            'answer' => $correctAnswer,
+        ];
+    }
+    return $questions;
+}
+
+$questions = getGameData();
+
+Engine::playGame($questions, DESCRIPTION);
