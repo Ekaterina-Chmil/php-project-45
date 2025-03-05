@@ -1,16 +1,51 @@
+# Brain Games Project
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Ekaterina-Chmil/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ekaterina-Chmil/php-project-45/actions)
 
-View the recording at:
+[![Maintainability](https://api.codeclimate.com/v1/badges/6c2f244d1a4968754020/maintainability)](https://codeclimate.com/github/Ekaterina-Chmil/php-project-45/maintainability)
 
-    https://asciinema.org/a/LJ567rI9zm56MdgzijWzn28vP
+### Description
+A set of five console games built on the principle of popular mobile apps for brain training.
 
-    https://asciinema.org/a/vyJtog2plfUFign9AkSno3ao4
+### Requirements
+- PHP 8.1+
+- Composer
 
-    https://asciinema.org/a/69YzvU3eV4ryLRyogn3Pv6406
+### Installation
+```bash
+git clone https://github.com/Ekaterina-Chmil/php-project-45.git
+cd php-project-45
+make install
+```
 
-    https://asciinema.org/a/VgvGWtspUpxuqSHdrG7VtLQrg
+### Game Launch
+bin/brain-games
 
-    https://asciinema.org/a/U0H48i0rpt4FEAfYrp2QPIx0K
+### Game Demo
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/6c2f244d1a4968754020/maintainability)](https://codeclimate.com/github/Ekaterina-Chmil/php-project-45/maintainability)	
+#### Brain-Even
+
+A game where you need to determine if a given number is even or odd.
+[Recording](https://asciinema.org/a/LJ567rI9zm56MdgzijWzn28vPi)
+
+#### Brain-Calc
+
+A simple calculator game where you solve basic mathematical expressions.
+[Recording](https://asciinema.org/a/vyJtog2plfUFign9AkSno3ao4)
+
+#### Brain-GCD
+
+This game asks you to find the greatest common divisor of two numbers.
+[Recording](https://asciinema.org/a/69YzvU3eV4ryLRyogn3Pv6406)
+
+#### Brain-Progression
+
+You need to find the missing number in a number sequence.
+[Recording](https://asciinema.org/a/VgvGWtspUpxuqSHdrG7VtLQrg)
+
+#### Brain-Prime
+
+A game where you check if a number is prime or not.
+[Recording](https://asciinema.org/a/U0H48i0rpt4FEAfYrp2QPIx0K)
+
