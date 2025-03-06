@@ -7,14 +7,14 @@ use function cli\prompt;
 
 class Engine
 {
-    const ROUNDS_COUNT = 3;
+    public const ROUNDS_COUNT = 3;
 
     public static function playGame(array $questions, string $description)
     {
         line('Welcome to the Brain Games!');
         $name = prompt('May I have your name?');
         line("Hello, {$name}!");
-	line($description);
+        line($description);
 
         $round = 1;
         foreach ($questions as $question) {
@@ -37,4 +37,3 @@ class Engine
         }
     }
 }
-
