@@ -22,3 +22,4 @@ function runBrainEvenGame()
 {
     runGame(DESCRIPTION, fn() => generateRound());
 }
+

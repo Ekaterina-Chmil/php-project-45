@@ -31,3 +31,4 @@ function runGame(string $description, callable $generateRound)
 
     echo "Congratulations, $name!" . PHP_EOL;
 }
+
