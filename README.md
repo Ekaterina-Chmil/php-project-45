@@ -27,3 +27,23 @@ bin/brain-games
 A game where you need to determine if a given number is even or odd.
 [Recording](https://asciinema.org/a/LJ567rI9zm56MdgzijWzn28vPi)
 
+#### Brain-Calc
+
+A simple calculator game where you solve basic mathematical expressions.
+[Recording](https://asciinema.org/a/vyJtog2plfUFign9AkSno3ao4)
+
+#### Brain-GCD
+
+This game asks you to find the greatest common divisor of two numbers.
+[Recording](https://asciinema.org/a/69YzvU3eV4ryLRyogn3Pv6406)
+
+#### Brain-Progression
+
+You need to find the missing number in a number sequence.
+[Recording](https://asciinema.org/a/VgvGWtspUpxuqSHdrG7VtLQrg)
+
+#### Brain-Prime
+
+A game where you check if a number is prime or not.
+[Recording](https://asciinema.org/a/U0H48i0rpt4FEAfYrp2QPIx0K)
+
