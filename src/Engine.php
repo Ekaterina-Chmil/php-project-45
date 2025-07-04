@@ -1,34 +1,36 @@
-#!/usr/bin/env php
 <?php
+
+declare(strict_types=1);
 
 namespace BrainGames\Engine;
 
-use function BrainGames\Cli\greet;
+use function cli\line;
 use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function runGame(string $description, callable $generateRound)
+function runGame(\Closure $getGameData, string $gameDescription): void
 {
-    $name = prompt('May I have your name?');
-    echo "Hello, $name!" . PHP_EOL;
-    echo $description . PHP_EOL;
+    line('Welcome to the Brain Games!');
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
+    line($gameDescription);
 
-    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$question, $correctAnswer] = $generateRound();
-        echo "Question: $question" . PHP_EOL;
+    for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
+        ['question' => $question, 'correctAnswer' => $correctAnswer] = $getGameData();
 
-        $userAnswer = strtolower(trim(prompt('Your answer')));
+        line("Question: {$question}");
+        $userAnswer = prompt('Your answer');
 
         if ($userAnswer !== $correctAnswer) {
-            echo "'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'." . PHP_EOL;
-            echo "Let's try again, $name!" . PHP_EOL;
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$userName}!");
             return;
         }
 
-        echo "Correct!" . PHP_EOL;
+        line('Correct!');
     }
 
-    echo "Congratulations, $name!" . PHP_EOL;
+    line("Congratulations, {$userName}!");
 }
 
