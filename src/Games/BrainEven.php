@@ -1,25 +1,29 @@
-#!/usr/bin/env php
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\BrainEven;
 
 use function BrainGames\Engine\runGame;
 
-const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function isEven(int $number): bool
 {
     return $number % 2 === 0;
 }
 
-function generateRound(): array
+function generateData(): array
 {
     $number = rand(1, 100);
-    return [$number, isEven($number) ? 'yes' : 'no'];
+    $correctAnswer = isEven($number) ? 'yes' : 'no';
+
+    return [
+        'question' => (string)$number,
+        'correctAnswer' => $correctAnswer,
+    ];
 }
 
-function runBrainEvenGame()
+function run(): void
 {
-    runGame(DESCRIPTION, fn() => generateRound());
+    runGame(fn() => generateData(), GAME_DESCRIPTION);
 }
 
