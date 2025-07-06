@@ -4,7 +4,7 @@ namespace BrainGames\Games\BrainProgression;
 
 use function BrainGames\Engine\runGame;
 
-const DESCRIPTION = 'What number is missing in the progression?';
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
 function buildProgression(int $start, int $step, int $length, int $hiddenIndex): array
 {
@@ -17,21 +17,25 @@ function buildProgression(int $start, int $step, int $length, int $hiddenIndex):
     return $progression;
 }
 
-function startGame(): void
+function generateData(): array
 {
-    $generateRound = function (): array {
-        $start = rand(1, 20);
-        $step = rand(2, 10);
-        $length = rand(5, 10);
-        $hiddenIndex = rand(0, $length - 1);
+    $start = rand(1, 20);
+    $step = rand(2, 10);
+    $length = rand(5, 10);
+    $hiddenIndex = rand(0, $length - 1);
 
-        $progression = buildProgression($start, $step, $length, $hiddenIndex);
-        $question = implode(' ', $progression);
-        $correctAnswer = (string) ($start + $step * $hiddenIndex);
+    $progression = buildProgression($start, $step, $length, $hiddenIndex);
+    $question = implode(' ', $progression);
+    $correctAnswer = (string) ($start + $step * $hiddenIndex);
 
-        return [$question, $correctAnswer];
-    };
+    return [
+        'question' => $question,
+        'correctAnswer' => $correctAnswer,
+    ];
+}
 
-    runGame(DESCRIPTION, $generateRound);
+function run(): void
+{
+    runGame(fn() => generateData(), GAME_DESCRIPTION);
 }
 
