@@ -27,7 +27,7 @@ function generateData(): array
     $correctAnswer = isPrime($number) ? 'yes' : 'no';
 
     return [
-	'question' => (string) $number,
+    'question' => (string) $number,
         'correctAnswer' => $correctAnswer,
     ];
 }
@@ -36,4 +36,3 @@ function run(): void
 {
     runGame(fn() => generateData(), GAME_DESCRIPTION);
 }
-

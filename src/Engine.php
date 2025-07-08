@@ -33,4 +33,3 @@ function runGame(\Closure $getGameData, string $gameDescription): void
 
     line("Congratulations, {$userName}!");
 }
-

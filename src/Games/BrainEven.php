@@ -26,4 +26,3 @@ function run(): void
 {
     runGame(fn() => generateData(), GAME_DESCRIPTION);
 }
-
