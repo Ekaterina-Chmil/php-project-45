@@ -10,14 +10,14 @@ const OPERATIONS = ['+', '-', '*'];
 function calculate(int $num1, int $num2, string $operation): int
 {
     switch ($operation) {
-        case '+':
-            return $num1 + $num2;
-        case '-':
-            return $num1 - $num2;
-        case '*':
-            return $num1 * $num2;
-        default:
-            throw new \Exception("Unexpected operation: $operation");
+    case '+':
+        return $num1 + $num2;
+    case '-':
+        return $num1 - $num2;
+    case '*':
+        return $num1 * $num2;
+    default:
+        throw new \Exception("Unexpected operation: $operation");
     }
 }
 
