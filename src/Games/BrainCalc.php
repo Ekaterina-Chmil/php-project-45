@@ -23,20 +23,20 @@ function calculate(int $num1, int $num2, string $operation): int
 
 function generateData(): array
 {
-        $num1 = rand(1, 50);
-        $num2 = rand(1, 50);
-        $operation = OPERATIONS[array_rand(OPERATIONS)];
+    $num1 = rand(1, 50);
+    $num2 = rand(1, 50);
+    $operation = OPERATIONS[array_rand(OPERATIONS)];
 
-        $correctAnswer = calculate($num1, $num2, $operation);
-        $question = "{$num1} {$operation} {$num2}";
+    $correctAnswer = calculate($num1, $num2, $operation);
+    $question = "{$num1} {$operation} {$num2}";
 
-        return [
-                'question' => $question,
-                'correctAnswer' => (string) $correctAnswer,
-        ];
+    return [
+        'question' => $question,
+        'correctAnswer' => (string) $correctAnswer,
+    ];
 }
 
 function run(): void
 {
-        runGame(fn() => generateData(), GAME_DESCRIPTION);
+    runGame(fn() => generateData(), GAME_DESCRIPTION);
 }
